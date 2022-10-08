@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:porfolio/about.dart';
 
-import 'navBar.dart';
+import 'nav_bar.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        drawer: NavBar(),
+        drawer: const NavBar(),
         appBar: AppBar(
-          title: Text("About me"),
+          title: const Text("About me"),
           backgroundColor: Colors.green,
         ),
       );

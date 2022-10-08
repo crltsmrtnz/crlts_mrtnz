@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:porfolio/home.dart';
 import 'package:porfolio/about.dart';
 import 'package:porfolio/Porfolio.dart';
+import 'package:porfolio/user_page.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -14,14 +15,46 @@ class NavBar extends StatelessWidget {
           children: <Widget>[buildHeader(context), buildMenuItems(context)],
         ),
       ));
-  Widget buildHeader(BuildContext context) => Container(
-        padding: EdgeInsets.only(
-          top: MediaQuery.of(context).padding.top,
+  Widget buildHeader(BuildContext context) => Material(
+        color: Colors.blue.shade800,
+        child: InkWell(
+          onTap: () {
+            Navigator.pop(context); // Close navigations
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const UserPage(),
+            ));
+          },
+          child: Container(
+            padding: EdgeInsets.only(
+              top: 24 + MediaQuery.of(context).padding.top,
+              bottom: 24,
+            ),
+            child: Column(
+              children: const [
+                CircleAvatar(
+                  radius: 52,
+                  backgroundImage: AssetImage('assets/img/CrltsMrtnz.png'),
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Text(
+                  "Carlos Martínez",
+                  style: TextStyle(
+                      fontSize: 28, fontFamily: "roboto", color: Colors.white),
+                ),
+                Text(
+                  "crltsmrtnz@gmail.com",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                )
+              ],
+            ),
+          ),
         ),
       );
 
   Widget buildMenuItems(BuildContext context) => Container(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(15),
         child: Wrap(
           runSpacing: 16, //vertical Spacing
           children: [
