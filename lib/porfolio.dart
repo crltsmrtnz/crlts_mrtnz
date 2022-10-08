@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:porfolio/about.dart';
 
-import 'navBar.dart';
+import 'nav_bar.dart';
 
 class Porfolio extends StatelessWidget {
   const Porfolio({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        drawer: NavBar(),
+        drawer: const NavBar(),
         appBar: AppBar(
-          title: Text("Porfolio"),
+          title: const Text("Porfolio"),
           backgroundColor: Colors.green,
         ),
       );
