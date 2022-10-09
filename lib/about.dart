@@ -12,5 +12,11 @@ class About extends StatelessWidget {
           title: const Text("About me"),
           backgroundColor: Colors.green,
         ),
+        body: const Center(
+          // Este Widget de texto usará la fuente RobotoMono
+          child: Text(
+            'A b o u t',
+          ),
+        ),
       );
 }

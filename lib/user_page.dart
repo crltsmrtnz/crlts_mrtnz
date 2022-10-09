@@ -5,11 +5,24 @@ class UserPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "Carlos Martínez",
-          ),
+      appBar: AppBar(
+        title: const Text(
+          "Carlos Martínez",
         ),
-        body: Image.asset('assets/img/CrltsMrtnz.png'),
-      );
+      ),
+      body: Center(
+        // Este Widget de texto usará la fuente RobotoMono
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset('assets/img/CrltsMrtnz.png'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text('crltsmrtnz@gmail.com'),
+            ),
+          ],
+        ),
+      ));
 }

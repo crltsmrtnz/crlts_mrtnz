@@ -40,8 +40,7 @@ class NavBar extends StatelessWidget {
                 ),
                 Text(
                   "Carlos Martínez",
-                  style: TextStyle(
-                      fontSize: 28, fontFamily: "roboto", color: Colors.white),
+                  style: TextStyle(fontSize: 28, color: Colors.white),
                 ),
                 Text(
                   "crltsmrtnz@gmail.com",
@@ -79,7 +78,9 @@ class NavBar extends StatelessWidget {
             const Divider(color: Colors.black54),
             ListTile(
                 leading: const Icon(Icons.work),
-                title: const Text("Porfolio"),
+                title: const Text(
+                  "Porfolio",
+                ),
                 onTap: () {
                   // close navigations menu
                   Navigator.pop(context);
