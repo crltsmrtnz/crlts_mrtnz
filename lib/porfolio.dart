@@ -12,5 +12,11 @@ class Porfolio extends StatelessWidget {
           title: const Text("Porfolio"),
           backgroundColor: Colors.green,
         ),
+        body: const Center(
+          // Este Widget de texto usará la fuente RobotoMono
+          child: Text(
+            'P o r f o l i o',
+          ),
+        ),
       );
 }
