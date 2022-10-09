@@ -12,5 +12,11 @@ class Home extends StatelessWidget {
           title: const Text("Home"),
           backgroundColor: Colors.green,
         ),
+        body: const Center(
+          // Este Widget de texto usará la fuente RobotoMono
+          child: Text(
+            'H o m e',
+          ),
+        ),
       );
 }
