@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:porfolio/home.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:porfolio/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Crlts Mrtnz',
       theme: ThemeData(
         textTheme: GoogleFonts.robotoMonoTextTheme(

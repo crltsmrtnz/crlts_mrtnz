@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-import 'nav_bar.dart';
+import 'package:porfolio/pages/nav_bar.dart';
 
-class Porfolio extends StatelessWidget {
-  const Porfolio({super.key});
+class About extends StatelessWidget {
+  const About({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
         drawer: const NavBar(),
         appBar: AppBar(
-          title: const Text("Porfolio"),
+          title: const Text("About me"),
         ),
         body: const Center(
           // Este Widget de texto usará la fuente RobotoMono
           child: Text(
-            'P o r f o l i o',
+            'A b o u t',
           ),
         ),
       );
