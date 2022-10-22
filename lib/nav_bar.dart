@@ -19,9 +19,9 @@ class NavBar extends StatelessWidget {
         color: Colors.blue.shade800,
         child: InkWell(
           onTap: () {
-            Navigator.pop(context); // Close navigations
+            // Navigator.pop(context); // Close navigations
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const DetailScreen(),
+              builder: (context) => const AvatarDetail(),
             ));
           },
           child: Container(
@@ -30,9 +30,10 @@ class NavBar extends StatelessWidget {
               bottom: 24,
             ),
             child: Column(
-              children: const <Widget>[
+              children: const [
                 CircleAvatar(
-                  child: MainScreen(),
+                  radius: 52,
+                  backgroundImage: AssetImage('assets/img/CrltsMrtnz.png'),
                 ),
                 SizedBox(
                   height: 12,
@@ -42,7 +43,8 @@ class NavBar extends StatelessWidget {
                   style: TextStyle(fontSize: 22, color: Colors.white),
                 ),
                 Text(
-                  "crltsmrtnz@gmail.com",
+                  "Desarrollador web y app\nE-mail Marketing",
+                  textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 12, color: Colors.white),
                 )
               ],
