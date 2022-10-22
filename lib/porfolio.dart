@@ -10,7 +10,6 @@ class Porfolio extends StatelessWidget {
         drawer: const NavBar(),
         appBar: AppBar(
           title: const Text("Porfolio"),
-          backgroundColor: Colors.green,
         ),
         body: const Center(
           // Este Widget de texto usará la fuente RobotoMono

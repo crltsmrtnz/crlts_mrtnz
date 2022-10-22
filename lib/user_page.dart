@@ -26,3 +26,66 @@ class UserPage extends StatelessWidget {
         ),
       ));
 }
+
+class HeroApp extends StatelessWidget {
+  const HeroApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Container(
+        padding: const EdgeInsets.all(20.0),
+        child: const MainScreen(),
+      ),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const DetailScreen();
+          }));
+        },
+        child: Hero(
+          tag: 'imageHero',
+          child: Image.asset(
+            'assets/img/CrltsMrtnz.png',
+            width: 200.0,
+            height: 300.0,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class DetailScreen extends StatelessWidget {
+  const DetailScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Carlos Martínez'),
+      ),
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Center(
+          child: Hero(
+            tag: 'imageHero',
+            child: Image.asset('assets/img/CrltsMrtnz.png'),
+          ),
+        ),
+      ),
+    );
+  }
+}

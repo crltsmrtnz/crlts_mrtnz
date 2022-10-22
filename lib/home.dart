@@ -10,7 +10,6 @@ class Home extends StatelessWidget {
         drawer: const NavBar(),
         appBar: AppBar(
           title: const Text("Home"),
-          backgroundColor: Colors.green,
         ),
         body: const Center(
           // Este Widget de texto usará la fuente RobotoMono

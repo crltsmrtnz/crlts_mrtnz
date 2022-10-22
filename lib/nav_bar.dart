@@ -21,7 +21,7 @@ class NavBar extends StatelessWidget {
           onTap: () {
             Navigator.pop(context); // Close navigations
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const UserPage(),
+              builder: (context) => const DetailScreen(),
             ));
           },
           child: Container(
@@ -30,21 +30,20 @@ class NavBar extends StatelessWidget {
               bottom: 24,
             ),
             child: Column(
-              children: const [
+              children: const <Widget>[
                 CircleAvatar(
-                  radius: 52,
-                  backgroundImage: AssetImage('assets/img/CrltsMrtnz.png'),
+                  child: MainScreen(),
                 ),
                 SizedBox(
                   height: 12,
                 ),
                 Text(
                   "Carlos Martínez",
-                  style: TextStyle(fontSize: 28, color: Colors.white),
+                  style: TextStyle(fontSize: 22, color: Colors.white),
                 ),
                 Text(
                   "crltsmrtnz@gmail.com",
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: TextStyle(fontSize: 12, color: Colors.white),
                 )
               ],
             ),

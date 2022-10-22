@@ -10,7 +10,6 @@ class About extends StatelessWidget {
         drawer: const NavBar(),
         appBar: AppBar(
           title: const Text("About me"),
-          backgroundColor: Colors.green,
         ),
         body: const Center(
           // Este Widget de texto usará la fuente RobotoMono

@@ -6,6 +6,9 @@ void main() {
   runApp(const MyApp());
 }
 
+Color c = const Color(0xFF42A5F5);
+Color backgrounGray = const Color(0xff171d49);
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -14,12 +17,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Crlts Mrtnz',
       theme: ThemeData(
-        textTheme: GoogleFonts.spaceMonoTextTheme(
+        textTheme: GoogleFonts.robotoMonoTextTheme(
           Theme.of(context).textTheme,
         ),
 
         //brightness: Brightness.dark,
-        primaryColor: Colors.lightBlue[800],
+        primaryColor: Colors.grey[800],
       ),
       home: const Home(),
     );
