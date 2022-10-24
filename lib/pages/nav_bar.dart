@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:porfolio/pages/home.dart';
 import 'package:porfolio/pages/about.dart';
-import 'package:porfolio/pages/Porfolio.dart';
+import 'package:porfolio/pages/porfolio/app.dart';
+import 'package:porfolio/pages/porfolio/email_templates.dart';
+import 'package:porfolio/pages/porfolio/web.dart';
 import 'package:porfolio/pages/user_page.dart';
 
 class NavBar extends StatelessWidget {
@@ -71,7 +73,7 @@ class NavBar extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.person),
+              leading: const Icon(Icons.person_outline),
               title: const Text("About me"),
               onTap: () {
                 // close navigations menu
@@ -81,23 +83,151 @@ class NavBar extends StatelessWidget {
                 ));
               },
             ),
-            const Divider(color: Colors.black54),
-            ListTile(
-              leading: const Icon(Icons.work),
+
+            ExpansionTile(
+              leading: const Icon(Icons.work_history_outlined),
               title: const Text(
                 "Porfolio",
               ),
-              onTap: () {
-                // close navigations menu
-                Navigator.pop(context);
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => const Porfolio(),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ListTile(
+                          leading: const Icon(Icons.desktop_mac_outlined),
+                          title: const Text(
+                            "Web",
+                          ),
+                          onTap: () {
+                            // close navigations menu
+                            Navigator.pop(context);
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => const Web(),
+                              ),
+                            );
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.smartphone_outlined),
+                          title: const Text(
+                            "App",
+                          ),
+                          onTap: () {
+                            // close navigations menu
+                            Navigator.pop(context);
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => const App(),
+                              ),
+                            );
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.code_outlined),
+                          title: const Text(
+                            "Email templates",
+                          ),
+                          onTap: () {
+                            // close navigations menu
+                            Navigator.pop(context);
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => const EmailTemplates(),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
                   ),
-                );
-              },
-            )
+                ),
+              ],
+            ),
+            // ListView(children: getList())
           ],
         ),
       );
+
+  getList() {
+    [
+      basicTiles.map(buildTile).toList(),
+    ];
+  }
+}
+
+// Sub item to porfolio section
+class BasicTile {
+  final String? title;
+  final List<BasicTile>? tiles;
+
+  const BasicTile({
+    required this.title,
+    this.tiles = const [],
+  });
+}
+
+final basicTiles = <BasicTile>[
+  const BasicTile(
+    title: 'Previuos Works',
+    tiles: [
+      BasicTile(title: 'Email'),
+      BasicTile(title: 'Web'),
+      BasicTile(title: 'App'),
+    ],
+  ),
+  const BasicTile(
+    title: 'Continent',
+    tiles: [
+      BasicTile(
+        title: 'Asia',
+        tiles: [
+          BasicTile(title: '1'),
+          BasicTile(title: '2'),
+          BasicTile(title: '3'),
+        ],
+      ),
+      BasicTile(
+        title: 'Europa',
+        tiles: [
+          BasicTile(title: '1'),
+          BasicTile(title: '2'),
+          BasicTile(title: '3'),
+        ],
+      ),
+    ],
+  ),
+];
+
+Widget buildTile(BasicTile tile, {double leftPadding = 16}) {
+  if (tile.tiles!.isEmpty) {
+    return ListTile(
+      contentPadding: EdgeInsets.only(left: leftPadding),
+      title: Text(tile.title!),
+      // onTap: () => Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => DetailsPage(tile: tile),
+      //   ),
+      // ),
+    );
+  } else {
+    return ExpansionTile(
+      tilePadding: EdgeInsets.only(left: leftPadding), //
+      trailing: const SizedBox.shrink(),
+      leading: const Icon(Icons.keyboard_arrow_right_outlined),
+
+      ///
+
+      title: Text(tile.title!),
+      children: tile.tiles!
+          .map((tile) => buildTile(tile, leftPadding: 16 + leftPadding))
+          .toList(),
+    );
+  }
 }
