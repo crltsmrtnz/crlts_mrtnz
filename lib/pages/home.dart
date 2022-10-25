@@ -11,10 +11,12 @@ class Home extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Home"),
         ),
-        body: const Center(
-          // Este Widget de texto usará la fuente RobotoMono
-          child: Text(
-            'H o m e - firebase',
+        body: const SafeArea(
+          child: Center(
+            // Este Widget de texto usará la fuente RobotoMono
+            child: Text(
+              'H o m e',
+            ),
           ),
         ),
       );
