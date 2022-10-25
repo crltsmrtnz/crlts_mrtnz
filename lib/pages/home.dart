@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
         body: const Center(
           // Este Widget de texto usará la fuente RobotoMono
           child: Text(
-            'H o m e',
+            'H o m e - firebase',
           ),
         ),
       );

@@ -21,9 +21,8 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.robotoMonoTextTheme(
           Theme.of(context).textTheme,
         ),
-
-        //brightness: Brightness.dark,
-        primaryColor: Colors.grey[800],
+        brightness: Brightness.dark,
+        primaryColor: Colors.red[800],
       ),
       home: const SafeArea(child: Home()),
     );
