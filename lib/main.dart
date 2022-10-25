@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
         //brightness: Brightness.dark,
-        primaryColor: Colors.red[800],
+        primaryColor: Colors.grey[800],
       ),
       home: const Home(),
     );
