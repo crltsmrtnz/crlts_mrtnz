@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         //brightness: Brightness.dark,
         primaryColor: Colors.grey[800],
       ),
-      home: const Home(),
+      home: const SafeArea(child: Home()),
     );
   }
 }
