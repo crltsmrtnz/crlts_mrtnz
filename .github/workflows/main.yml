@@ -23,14 +23,32 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v1
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      ##########################
+      # Install Flutter command
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+
+      # Build Website
+      - name: Build Website
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          flutter config --enable-web
+          flutter pub get
+          flutter build web --release
+        working-directory: ./
+
+      # Deploy Firebase Hosting
+      - name: Deploy Firebase Hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:crlts-mrtnz
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          
+          # FIREBASE_PROJECT: picsel-jz
+          PROJECT_PATH: ./
+      ##########################  
+
