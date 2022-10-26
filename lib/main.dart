@@ -1,16 +1,37 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:porfolio/pages/home.dart';
 
-void main() {
-  runApp(const MyApp());
+Future main() async {
+  // FireBase Config
+  // https://www.youtube.com/watch?v=yL5_NHq-QMY
+  // https://www.youtube.com/watch?v=RZVtdZt7Fao
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyA8tgnzbEX1c4GMwAqlBT4MYkvDNKsfxEg",
+      authDomain: "crlts-mrtnz.firebaseapp.com",
+      projectId: "crlts-mrtnz",
+      storageBucket: "crlts-mrtnz.appspot.com",
+      messagingSenderId: "245336098410",
+      appId: "1:245336098410:web:c09c9ecdb5c38d11c86c13",
+      measurementId: "G-C5V4LPHSCQ",
+    ),
+  );
+  // FireBase Config
+  // Initialize Firebase No sabemos aun si necesitamos
+  // const app = initializeApp(firebaseConfig);
+  // const analytics = getAnalytics(app);
+  runApp(MyApp());
 }
 
-Color c = const Color(0xFF42A5F5);
-Color backgrounGray = const Color(0xff171d49);
+// Color c = const Color(0xFF42A5F5);
+// Color backgrounGray = const Color(0xff171d49);
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
