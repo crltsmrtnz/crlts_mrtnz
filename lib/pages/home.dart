@@ -11,22 +11,11 @@ class Home extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Home"),
         ),
-        body: SafeArea(
+        body: const SafeArea(
           child: Center(
-            child: Container(
-              padding: const EdgeInsets.all(20.0),
-              child: RichText(
-                text: TextSpan(
-                  text: 'Hello ',
-                  style: DefaultTextStyle.of(context).style,
-                  children: const <TextSpan>[
-                    TextSpan(
-                        text: 'bold',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: ' world!'),
-                  ],
-                ),
-              ),
+            // Este Widget de texto usará la fuente RobotoMono
+            child: Text(
+              'Home',
             ),
           ),
         ),
