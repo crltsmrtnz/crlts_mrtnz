@@ -31,6 +31,7 @@ Future main() async {
 // Color backgrounGray = const Color(0xff171d49);
 
 class MyApp extends StatelessWidget {
+  // ignore: prefer_const_constructors_in_immutables
   MyApp({super.key});
 
   @override
