@@ -7,13 +7,13 @@ https://crlts-mrtnz.web.ap  </br>
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Clonar
+- Actualizar version de dependecias
+    dependencies:
+        google_fonts: ^5.1.0
+        firebase_core: ^2.14.0
+- Correr de vuelta y deberia funcionar
+    Si no funciona pruebe con:
+        flutter clean
+        flutter pub get
+- 

@@ -34,8 +34,8 @@ class NavBar extends StatelessWidget {
               top: 24 + MediaQuery.of(context).padding.top,
               bottom: 24,
             ),
-            child: Column(
-              children: const [
+            child: const Column(
+              children: [
                 CircleAvatar(
                   radius: 52,
                   backgroundImage: AssetImage('assets/img/CrltsMrtnz.png'),
@@ -45,10 +45,14 @@ class NavBar extends StatelessWidget {
                 ),
                 Text(
                   "Carlos Martínez",
-                  style: TextStyle(fontSize: 22, color: Colors.white),
+                  style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
                 Text(
-                  "Desarrollador web y app\nE-mail Marketing",
+                  "@CrltsMrtnz",
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+                Text(
+                  "Front-End Developer \n Technical CRM Specialist",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 12, color: Colors.white),
                 )

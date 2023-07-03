@@ -13,8 +13,29 @@ class About extends StatelessWidget {
         ),
         body: const Center(
           // Este Widget de texto usará la fuente RobotoMono
-          child: Text(
-            'A b o u t',
+          child: Column(
+            children: [
+              CircleAvatar(
+                radius: 52,
+                backgroundImage: AssetImage('assets/img/CrltsMrtnz.png'),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Text(
+                "CrltsMrtnz@gmail.com",
+                style: TextStyle(fontSize: 24, color: Color(0xFF1434D7)),
+              ),
+              Text(
+                "+595972264992",
+                style: TextStyle(fontSize: 24, color: Color(0xFF1434D7)),
+              ),
+              Text(
+                "https://www.linkedin.com/in/crltsmrtnz/",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20, color: Color(0xFF1434D7)),
+              )
+            ],
           ),
         ),
       );
