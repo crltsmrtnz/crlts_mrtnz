@@ -1,29 +1,42 @@
-name: Flutter CI
+name: Crlts Mrtnz Web
 
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events for the "master" branch; you can change it according to your requirement
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - main
+    branches: [ "main" ]
+  # Allows you to run this workflow manually from the Actions tab from your GitHub repo (a workflow run is made up of one or more jobs that can run sequentially or in paralle)
+  workflow_dispatch:
+
+
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
+    # Readies your repository under $GITHUB_WORKSPACE, so your job can access it
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+    # Sets up Java so your job can use it for the Flutter app build
+      uses: actions/checkout@v3
 
     - name: Set up Flutter
-      uses: subosito/flutter-action@v1
+    # Sets up Flutter using the subosito Flutter workflow
+      uses: subosito/flutter-action@v2
       with:
-        flutter-version: '2.2.3'  # Specify the desired Flutter version
+        flutter-version: '2.18.0' 
+        channel: 'stable'
+    - run: flutter --version
 
     - name: Install dependencies
       run: flutter pub get
 
     - name: Run tests
       run: flutter test
+
+    - name: Build the app version Web
+      run: flutter build web
+        
