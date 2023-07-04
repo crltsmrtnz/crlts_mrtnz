@@ -74,7 +74,13 @@ https://crlts-mrtnz.firebaseapp.com </br>
         flutter pub get </br>
 # Secctions
     Home
-    About me 
+        -> Blog
+        -> Articles
+        -> Updates IT 
+    About me
+        -> Tel
+        -> Email
+        -> Socials  
     Porfolio
         -> Web 
         -> App 
