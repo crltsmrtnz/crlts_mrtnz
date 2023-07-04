@@ -6,7 +6,6 @@ import 'package:porfolio/pages/porfolio/email_templates.dart';
 import 'package:porfolio/pages/porfolio/web.dart';
 import 'package:porfolio/pages/user_page.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -173,21 +172,18 @@ class NavBar extends StatelessWidget {
               FlutterSocialButton(
                 onTap: () {},
                 mini: true,
+                buttonType: ButtonType.facebook,
               ),
               FlutterSocialButton(
-                onTap: () {
-                  _makePhoneCall(phoneNumber);
-                },
+                onTap: () {},
                 mini: true,
-                buttonType: ButtonType.facebook,
+                buttonType: ButtonType.google,
               ),
               // +595972264992
               FlutterSocialButton(
-                onTap: () {
-                  callBtn();
-                },
+                onTap: () {},
                 mini: true,
-                buttonType: ButtonType.google,
+                buttonType: ButtonType.phone,
               ),
             ],
           ),
@@ -197,32 +193,6 @@ class NavBar extends StatelessWidget {
     [
       basicTiles.map(buildTile).toList(),
     ];
-  }
-}
-
-Widget callBtn() {
-  const number = '+595972264992';
-
-  return ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      padding: const EdgeInsets.all(50),
-      textStyle: const TextStyle(fontSize: 24),
-    ),
-    child: const Text('Call'),
-    onPressed: () async {
-      launch("tel://$number");
-      await FlutterPhoneDirectCaller.callNumber(number);
-    },
-  );
-}
-
-const phoneNumber = '+595972264992';
-void _makePhoneCall(String phoneNumber) async {
-  final url = 'tel:$phoneNumber';
-  if (await canLaunchUrl(url as Uri)) {
-    await launchUrl(url as Uri);
-  } else {
-    throw 'Could not make the phone call.';
   }
 }
 
