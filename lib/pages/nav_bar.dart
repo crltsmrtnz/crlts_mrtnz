@@ -6,6 +6,7 @@ import 'package:porfolio/pages/porfolio/email_templates.dart';
 import 'package:porfolio/pages/porfolio/web.dart';
 import 'package:porfolio/pages/user_page.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -180,10 +181,18 @@ class NavBar extends StatelessWidget {
                 buttonType: ButtonType.google,
               ),
               // +595972264992
-              FlutterSocialButton(
-                onTap: () {},
-                mini: true,
-                buttonType: ButtonType.phone,
+              ElevatedButton(
+                onPressed: () async {
+                  final Uri url = Uri(
+                    scheme: 'tel',
+                    path: "452 869-8569",
+                  );
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url);
+                  } else {}
+                },
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                child: const Text('Call'),
               ),
             ],
           ),
