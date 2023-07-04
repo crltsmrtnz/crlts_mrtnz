@@ -32,14 +32,33 @@ jobs:
         with:
           channel: 'stable'
 
-      # Build Website
-      - name: Build Website
-        run: |
-          flutter config --enable-web
-          flutter pub get
-          flutter build web 
-        working-directory: ./
+      # # Build Website
+      # - name: Build Website
+      #   run: |
+      #     flutter config --enable-web
+      #     flutter pub get
+      #     flutter build web 
+      #   working-directory: ./
 
   
- 
+ ##########################
+      # Deploy Firebase Hosting
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter build web
+
+      # Deploy Firebase Hosting
+      - name: Deploy Firebase Hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:crlts-mrtnz
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_PROJECT: crlts-mrtnz
+
+          PROJECT_PATH: ./
+      ##########################  
             
