@@ -6,6 +6,7 @@ import 'package:porfolio/pages/porfolio/email_templates.dart';
 import 'package:porfolio/pages/porfolio/web.dart';
 import 'package:porfolio/pages/user_page.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -184,7 +185,9 @@ class NavBar extends StatelessWidget {
                 buttonType: ButtonType.google,
               ),
               FlutterSocialButton(
-                onTap: () {},
+                onTap: () {
+                  _launchPhone();
+                },
                 mini: true,
                 buttonType: ButtonType.phone,
               ),
@@ -196,6 +199,17 @@ class NavBar extends StatelessWidget {
     [
       basicTiles.map(buildTile).toList(),
     ];
+  }
+}
+
+void _launchPhone() async {
+  const phoneNumber = '+595972264992';
+  const phoneUrl = 'tel:$phoneNumber';
+
+  if (await canLaunchUrl(phoneUrl as Uri)) {
+    await launchUrl(phoneUrl as Uri);
+  } else {
+    throw 'No se pudo abrir la aplicación de llamadas.';
   }
 }
 

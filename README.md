@@ -59,6 +59,8 @@ https://crlts-mrtnz.firebaseapp.com </br>
 |     3| Homebrew  | 4.0.26                       | N/N |  
 |     4| N/N       | ^2.14.0                      | firebase_core |
 |     5| N/N       | ^5.1.0                       | google_fonts |
+|     5| N/N       | ^6.1.11                      | url_launcher |
+ 
 
 </details>
 
