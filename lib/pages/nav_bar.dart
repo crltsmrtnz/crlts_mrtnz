@@ -175,21 +175,19 @@ class NavBar extends StatelessWidget {
                 mini: true,
               ),
               FlutterSocialButton(
-                onTap: () {},
+                onTap: () {
+                  _makePhoneCall(phoneNumber);
+                },
                 mini: true,
                 buttonType: ButtonType.facebook,
               ),
-              FlutterSocialButton(
-                onTap: () {},
-                mini: true,
-                buttonType: ButtonType.google,
-              ),
+              // +595972264992
               FlutterSocialButton(
                 onTap: () {
-                  _launchPhone();
+                  callBtn();
                 },
                 mini: true,
-                buttonType: ButtonType.phone,
+                buttonType: ButtonType.google,
               ),
             ],
           ),
@@ -202,15 +200,34 @@ class NavBar extends StatelessWidget {
   }
 }
 
-void _launchPhone() async {
-  const phoneNumber = '+595972264992';
-  const phoneUrl = 'tel:$phoneNumber';
+Widget callBtn() {
+  const number = '+595972264992';
 
-  if (await canLaunchUrl(phoneUrl as Uri)) {
-    await launchUrl(phoneUrl as Uri);
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      padding: const EdgeInsets.all(50),
+      textStyle: const TextStyle(fontSize: 24),
+    ),
+    child: const Text('Call'),
+    onPressed: () async {
+      launch("tel://$number");
+      await FlutterPhoneDirectCaller.callNumber(number);
+    },
+  );
+}
+
+const phoneNumber = '+595972264992';
+void _makePhoneCall(String phoneNumber) async {
+  final url = 'tel:$phoneNumber';
+  if (await canLaunchUrl(url as Uri)) {
+    await launchUrl(url as Uri);
   } else {
-    throw 'No se pudo abrir la aplicación de llamadas.';
+    throw 'Could not make the phone call.';
   }
+}
+
+class FlutterPhoneDirectCaller {
+  static callNumber(String number) {}
 }
 
 // Sub item to porfolio section
