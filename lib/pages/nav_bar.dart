@@ -185,7 +185,7 @@ class NavBar extends StatelessWidget {
                 onPressed: () async {
                   final Uri url = Uri(
                     scheme: 'tel',
-                    path: "452 869-8569",
+                    path: "+595972264992",
                   );
                   if (await canLaunchUrl(url)) {
                     await launchUrl(url);
