@@ -1,4 +1,12 @@
 #  Carlos Martinez
+crltsmrtnz@gmail.com </br>
++595972264992 </br>
+https://github.com/crltsmrtnz </br>
+https://crltsmrtnz.github.io </br>
+https://linkedin.com/in/crltsmrtnz </br>
+
+## Preview this project 
+https://crlts-mrtnz.firebaseapp.com </br>
 
 <details>
 <summary>Requirements</summary>
@@ -10,12 +18,8 @@
 |     3| Homebrew  | 4.0.26                       | N/N |  
 |     4| N/N       | ^2.14.0                      | firebase_core |
 |     5| N/N       | ^5.1.0                       | google_fonts |
-</details>
 
-## Preview project 
-https://crlts-mrtnz.firebaseapp.com </br>
-or </br>
-https://crlts-mrtnz.web.ap  </br>
+</details>
 
 ## Getting Started
 
