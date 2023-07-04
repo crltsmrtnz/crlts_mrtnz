@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
           child: Center(
             // Este Widget de texto usará la fuente RobotoMono
             child: Text(
-              'H o m e test firebase conect',
+              'OK firebase conect. Contact channel in readme',
             ),
           ),
         ),
