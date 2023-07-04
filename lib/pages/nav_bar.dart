@@ -5,6 +5,7 @@ import 'package:porfolio/pages/porfolio/app.dart';
 import 'package:porfolio/pages/porfolio/email_templates.dart';
 import 'package:porfolio/pages/porfolio/web.dart';
 import 'package:porfolio/pages/user_page.dart';
+import 'package:flutter_social_button/flutter_social_button.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -14,7 +15,11 @@ class NavBar extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[buildHeader(context), buildMenuItems(context)],
+            children: <Widget>[
+              buildHeader(context),
+              buildSocials(context),
+              buildMenuItems(context)
+            ],
           ),
         ),
       );
@@ -46,10 +51,6 @@ class NavBar extends StatelessWidget {
                 Text(
                   "Carlos Martínez",
                   style: TextStyle(fontSize: 24, color: Colors.white),
-                ),
-                Text(
-                  "@CrltsMrtnz",
-                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Text(
                   "Front-End Developer \n Technical CRM Specialist",
@@ -158,6 +159,39 @@ class NavBar extends StatelessWidget {
         ),
       );
 
+  Widget buildSocials(BuildContext context) => Material(
+        color: Colors.blue.shade800,
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 24 + MediaQuery.of(context).padding.top,
+            bottom: 24,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              FlutterSocialButton(
+                onTap: () {},
+                mini: true,
+              ),
+              FlutterSocialButton(
+                onTap: () {},
+                mini: true,
+                buttonType: ButtonType.facebook,
+              ),
+              FlutterSocialButton(
+                onTap: () {},
+                mini: true,
+                buttonType: ButtonType.google,
+              ),
+              FlutterSocialButton(
+                onTap: () {},
+                mini: true,
+                buttonType: ButtonType.phone,
+              ),
+            ],
+          ),
+        ),
+      );
   getList() {
     [
       basicTiles.map(buildTile).toList(),
