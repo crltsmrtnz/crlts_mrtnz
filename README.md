@@ -76,7 +76,7 @@ https://crlts-mrtnz.firebaseapp.com </br>
         flutter pub get </br>
 # Secctions
     Home
-        -> Blog
+        -> Now, game 2048
         -> Articles
         -> Updates IT 
     About me
@@ -84,6 +84,7 @@ https://crlts-mrtnz.firebaseapp.com </br>
         -> Email
         -> Socials  
     Porfolio
+        -> Game
         -> Web 
         -> App 
         -> Email templates
