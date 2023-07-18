@@ -106,7 +106,7 @@ class NavBar extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         ListTile(
-                          leading: const Icon(Icons.desktop_mac_outlined),
+                          leading: const Icon(Icons.games_outlined),
                           title: const Text(
                             "Game",
                           ),
