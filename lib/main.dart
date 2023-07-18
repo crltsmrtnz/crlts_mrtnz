@@ -8,6 +8,7 @@ main() async {
   // FireBase Config
   // https://www.youtube.com/watch?v=yL5_NHq-QMY
   // https://www.youtube.com/watch?v=RZVtdZt7Fao
+  // https://youtu.be/xJo7Mqse960
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
