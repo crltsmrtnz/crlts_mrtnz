@@ -23,30 +23,42 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
 
       ##########################
       # Install Flutter command
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
 
-      # Build Website
-      #- name: Build Website
-       # run: |
-        #  flutter config --enable-web
-         # flutter pub get
-          #flutter build web --release
-        #working-directory: ./
+      # # Build Website
+      # - name: Build Website
+      #   run: |
+      #     flutter config --enable-web
+      #     flutter pub get
+      #     flutter build web 
+      #   working-directory: ./
+
+  
+ ##########################
+      # Deploy Firebase Hosting
+      # - uses: subosito/flutter-action@v1
+      #   with:
+      #     channel: 'stable'
+      - run: flutter pub get
+      # - run: flutter test
+      - run: flutter build web
 
       # Deploy Firebase Hosting
-      #- name: Deploy Firebase Hosting
-        #uses: w9jds/firebase-action@master
-        #with:
-         # args: deploy --only hosting:picsel-jz
-        #env:
-         # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          # FIREBASE_PROJECT: picsel-jz
-        #  PROJECT_PATH: ./
+      - name: Deploy Firebase Hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:crlts-mrtnz
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_PROJECT: crlts-mrtnz
+
+          PROJECT_PATH: ./
       ##########################  
+            
