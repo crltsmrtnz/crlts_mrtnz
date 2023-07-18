@@ -1,4 +1,4 @@
-//import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:crltsmrtnz/pages/home.dart';
@@ -10,17 +10,17 @@ main() async {
   // https://www.youtube.com/watch?v=RZVtdZt7Fao
   WidgetsFlutterBinding.ensureInitialized();
 
-  // await Firebase.initializeApp(
-  //   options: const FirebaseOptions(
-  //     apiKey: "AIzaSyA8tgnzbEX1c4GMwAqlBT4MYkvDNKsfxEg",
-  //     authDomain: "crlts-mrtnz.firebaseapp.com",
-  //     projectId: "crlts-mrtnz",
-  //     storageBucket: "crlts-mrtnz.appspot.com",
-  //     messagingSenderId: "245336098410",
-  //     appId: "1:245336098410:web:c09c9ecdb5c38d11c86c13",
-  //     measurementId: "G-C5V4LPHSCQ",
-  //   ),
-  // );
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyA8tgnzbEX1c4GMwAqlBT4MYkvDNKsfxEg",
+      authDomain: "crlts-mrtnz.firebaseapp.com",
+      projectId: "crlts-mrtnz",
+      storageBucket: "crlts-mrtnz.appspot.com",
+      messagingSenderId: "245336098410",
+      appId: "1:245336098410:web:c09c9ecdb5c38d11c86c13",
+      measurementId: "G-C5V4LPHSCQ",
+    ),
+  );
   // FireBase Config
   // Initialize Firebase No sabemos aun si necesitamos
   // const app = initializeApp(firebaseConfig);
