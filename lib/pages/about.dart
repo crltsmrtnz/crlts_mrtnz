@@ -32,7 +32,6 @@ class About extends StatelessWidget {
               ),
               Text(
                 "https://www.linkedin.com/in/crltsmrtnz/",
-                textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, color: Color(0xFF1434D7)),
               )
             ],
