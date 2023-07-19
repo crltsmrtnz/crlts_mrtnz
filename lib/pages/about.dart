@@ -11,10 +11,10 @@ class About extends StatelessWidget {
         appBar: AppBar(
           title: const Text("About me"),
         ),
-        body: const Center(
+        body: Center(
           // Este Widget de texto usará la fuente RobotoMono
           child: Column(
-            children: [
+            children: const [
               CircleAvatar(
                 radius: 52,
                 backgroundImage: AssetImage('assets/img/CrltsMrtnz.png'),

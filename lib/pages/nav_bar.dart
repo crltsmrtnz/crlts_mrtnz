@@ -41,8 +41,8 @@ class NavBar extends StatelessWidget {
               top: 24 + MediaQuery.of(context).padding.top,
               bottom: 24,
             ),
-            child: const Column(
-              children: [
+            child: Column(
+              children: const [
                 CircleAvatar(
                   radius: 52,
                   backgroundImage: AssetImage('assets/img/CrltsMrtnz.png'),

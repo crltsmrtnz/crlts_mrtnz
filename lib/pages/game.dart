@@ -12,7 +12,7 @@ class Game extends StatelessWidget {
         appBar: AppBar(
           title: const Text("2048"),
         ),
-        body: const SafeArea(
+        body: SafeArea(
           child: Center(
             // Este Widget de texto usará la fuente RobotoMono
             child: GamePage(),
