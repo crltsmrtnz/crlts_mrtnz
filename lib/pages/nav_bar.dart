@@ -56,7 +56,6 @@ class NavBar extends StatelessWidget {
                 ),
                 Text(
                   "Front-End Developer \n Technical CRM Specialist",
-                  textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 12, color: Colors.white),
                 )
               ],
