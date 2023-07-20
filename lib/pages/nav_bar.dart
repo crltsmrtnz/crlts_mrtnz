@@ -1,5 +1,5 @@
 // import 'package:crltsmrtnz/pages/game.dart';
-import 'package:crltsmrtnz/pages/porfolio/game/2048/game_page.dart';
+import 'package:crltsmrtnz/pages/game_2048.dart';
 import 'package:flutter/material.dart';
 import 'package:crltsmrtnz/pages/home.dart';
 import 'package:crltsmrtnz/pages/about.dart';
@@ -116,7 +116,8 @@ class NavBar extends StatelessWidget {
                             Navigator.pop(context);
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
-                                builder: (context) => Flutter2048(),
+                                builder: (context) =>
+                                    const GameVeiteCuarentaOcho(),
                               ),
                             );
                           },

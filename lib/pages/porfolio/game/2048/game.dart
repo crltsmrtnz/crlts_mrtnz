@@ -5,12 +5,12 @@ import 'dart:async';
 
 class Game {
   List<List<int>> _board = List.generate(4, (_) => List.generate(4, (_) => 0));
-  Map<String, int> _lastMergedValueAt = {};
+  final Map<String, int> _lastMergedValueAt = {};
 
   int _score = 0;
   int _highScore = 0;
 
-  StreamController<int> _highScoreController = StreamController<int>();
+  final StreamController<int> _highScoreController = StreamController<int>();
 
   Stream<int> get highScoreStream => _highScoreController.stream;
 
@@ -216,6 +216,7 @@ class Game {
 
     for (int x = 0; x < 4; x++) {
       int lastMergedValue = 0;
+      // ignore: unused_local_variable
       int lastMergedIndex = -1;
 
       for (int y = 2; y >= 0; y--) {
@@ -258,14 +259,18 @@ class Game {
     // _highScore = loadedHighScore;
 
     if (_score > _highScore) {
-      print("Reset HighScore  ");
+      if (kDebugMode) {
+        print("Reset HighScore  ");
+      }
       _highScore = _score;
       _storeHighScore(_highScore);
     }
     _board = List.generate(4, (_) => List.filled(4, 0));
     _score = 0;
 
-    print("resetGame: Highscore = $_highScore");
+    if (kDebugMode) {
+      print("resetGame: Highscore = $_highScore");
+    }
     _highScoreController.add(_highScore);
     spawnNewTile();
     spawnNewTile();
@@ -299,7 +304,9 @@ class Game {
     if (kDebugMode) {
       print("isGameOver: check");
     }
-    print("Board = $_board");
+    if (kDebugMode) {
+      print("Board = $_board");
+    }
     // Check if there are any empty cells
     for (int y = 0; y < 4; y++) {
       for (int x = 0; x < 4; x++) {
