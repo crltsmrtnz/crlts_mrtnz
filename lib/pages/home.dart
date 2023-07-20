@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
             child:
                 // GamePage(),
                 Text(
-              'Migrate V2',
+              'fireBase V2',
             ),
           ),
         ),
