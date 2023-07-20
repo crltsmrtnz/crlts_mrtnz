@@ -49,7 +49,7 @@ jobs:
       - run: 
           flutter pub get
           flutter clean
-          flutter build web
+          # flutter build web
 
       # Deploy Firebase Hosting
       - name: Deploy Firebase Hosting
