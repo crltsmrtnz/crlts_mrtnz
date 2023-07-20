@@ -37,6 +37,9 @@ dependencies:
 
   ## crltsmrtnz/pages/porfolio/game/2048
   # provider: ^6.0.5
+  flutter_swipe_detector: ^2.0.0
+  audioplayers: ^4.0.1
+  shared_preferences: ^2.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
