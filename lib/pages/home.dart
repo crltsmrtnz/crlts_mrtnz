@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
             child:
                 // Flutter2048(),
                 Text(
-              'Icons V3 path',
+              'Icons V3 deploy',
             ),
           ),
         ),
