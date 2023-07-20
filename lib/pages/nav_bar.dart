@@ -1,4 +1,5 @@
 // import 'package:crltsmrtnz/pages/game.dart';
+import 'package:crltsmrtnz/pages/porfolio/game/2048/game_page.dart';
 import 'package:flutter/material.dart';
 import 'package:crltsmrtnz/pages/home.dart';
 import 'package:crltsmrtnz/pages/about.dart';
@@ -105,21 +106,21 @@ class NavBar extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        // ListTile(
-                        //   leading: const Icon(Icons.games_outlined),
-                        //   title: const Text(
-                        //     "Game",
-                        //   ),
-                        //   onTap: () {
-                        //     // close navigations menu
-                        //     Navigator.pop(context);
-                        //     Navigator.of(context).pushReplacement(
-                        //       MaterialPageRoute(
-                        //         builder: (context) => const Game(),
-                        //       ),
-                        //     );
-                        //   },
-                        // ),
+                        ListTile(
+                          leading: const Icon(Icons.games_outlined),
+                          title: const Text(
+                            "Game",
+                          ),
+                          onTap: () {
+                            // close navigations menu
+                            Navigator.pop(context);
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => Flutter2048(),
+                              ),
+                            );
+                          },
+                        ),
                         ListTile(
                           leading: const Icon(Icons.desktop_mac_outlined),
                           title: const Text(
