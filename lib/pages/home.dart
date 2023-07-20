@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         drawer: const NavBar(),
         appBar: AppBar(
-          title: const Text("Home 2048 OK"),
+          title: const Text("Home"),
         ),
         body: const SafeArea(
           child: Center(
@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
             child:
                 // Flutter2048(),
                 Text(
-              'fireBase V2',
+              'Icons V2',
             ),
           ),
         ),
