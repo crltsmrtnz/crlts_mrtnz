@@ -6,8 +6,8 @@ import 'package:flutter_swipe_detector/flutter_swipe_detector.dart';
 import 'game.dart';
 import 'package:flutter/services.dart';
 
-// import 'app.dart';
-import 'tile_widget.dart';
+// ignore: unused_import
+import 'package:crltsmrtnz/pages/porfolio/game/2048/tile_widget.dart';
 
 class Flutter2048State extends State<Flutter2048>
     with TickerProviderStateMixin {
@@ -83,7 +83,7 @@ class Flutter2048State extends State<Flutter2048>
           ),
           actions: [
             TextButton(
-              child: Text('Restart'),
+              child: const Text('Restart'),
               onPressed: () {
                 setState(() {
                   game.initBoard();
@@ -287,7 +287,7 @@ class Flutter2048State extends State<Flutter2048>
                     Column(
                       // Column for Score start
                       children: [
-                        Text('Score'),
+                        const Text('Score'),
                         StreamBuilder<int>(
                           stream: _scoreController.stream,
                           initialData: game.getScore(),
@@ -302,7 +302,7 @@ class Flutter2048State extends State<Flutter2048>
                     Column(
                       // Column for High Score start
                       children: [
-                        Text('High Score'),
+                        const Text('High Score'),
 
                         // Text('$_highScore'),
                         StreamBuilder<int>(
@@ -324,14 +324,14 @@ class Flutter2048State extends State<Flutter2048>
                         _scoreController.add(game.getScore());
                         // _highScoreController.add(game.getHighScore());
                       },
-                      child: Text('Restart Game'),
+                      child: const Text('Restart Game'),
                     ),
                   ],
                 ), // Row end
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                       bottom: 16.0), // Add padding below the grid
 
                   child: AspectRatio(
@@ -339,7 +339,7 @@ class Flutter2048State extends State<Flutter2048>
                     aspectRatio: 1.0,
                     child: SwipeDetector(
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         color: Colors.grey[800],
                         child: _buildGrid(),
                       ),

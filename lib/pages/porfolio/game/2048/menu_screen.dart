@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class MenuScreen extends StatelessWidget {
+  const MenuScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter 2048'),
+        title: const Text('Flutter 2048'),
       ),
       body: Center(
         child: Column(
@@ -15,7 +17,7 @@ class MenuScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/game');
               },
-              child: Text('Start Game'),
+              child: const Text('Start Game'),
             ),
             const SizedBox(height: 20),
             // ElevatedButton(

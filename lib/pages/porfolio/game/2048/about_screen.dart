@@ -33,7 +33,7 @@ class AboutScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => MenuScreen()),
+                  MaterialPageRoute(builder: (context) => const MenuScreen()),
                 );
               },
               child: const Text('Back'),

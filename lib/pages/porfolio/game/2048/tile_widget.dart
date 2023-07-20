@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Tile extends StatelessWidget {
   final int value;
 
-  Tile({required this.value});
+  const Tile({super.key, required this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Tile extends StatelessWidget {
       child: Center(
         child: Text(
           value != 0 ? '$value' : '',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
     );
