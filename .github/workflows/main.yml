@@ -51,14 +51,14 @@ jobs:
       # - run: flutter build web
 
       # Deploy Firebase Hosting
-      - name: Deploy Firebase Hosting
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting:crlts-mrtnz
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          FIREBASE_PROJECT: crlts-mrtnz
+      # - name: Deploy Firebase Hosting
+      #   uses: w9jds/firebase-action@master
+      #   with:
+      #     args: deploy --only hosting:crlts-mrtnz
+      #   env:
+      #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      #     FIREBASE_PROJECT: crlts-mrtnz
 
-          PROJECT_PATH: ./
+      #     PROJECT_PATH: ./
       ##########################  
             
