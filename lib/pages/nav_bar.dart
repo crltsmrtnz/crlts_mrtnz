@@ -7,7 +7,7 @@ import 'package:crlts_mrtnz/pages/porfolio/email_templates.dart';
 import 'package:crlts_mrtnz/pages/porfolio/web.dart';
 import 'package:crlts_mrtnz/pages/user_page.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -219,6 +219,10 @@ class NavBar extends StatelessWidget {
       basicTiles.map(buildTile).toList(),
     ];
   }
+
+  canLaunchUrl(Uri url) {}
+
+  launchUrl(Uri url) {}
 }
 
 class FlutterPhoneDirectCaller {
