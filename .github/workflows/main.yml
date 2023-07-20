@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Crlts_Mrtnz
+name: crlts_mrtnz
 
 # Controls when the workflow will run
 on:
@@ -46,10 +46,9 @@ jobs:
       # - uses: subosito/flutter-action@v1
       #   with:
       #     channel: 'stable'
-      - run: 
-          flutter pub get
-          flutter clean
-          flutter build web 
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build web 
 
       # Deploy Firebase Hosting
       - name: Deploy Firebase Hosting
