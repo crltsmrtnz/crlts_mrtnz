@@ -1,4 +1,5 @@
 // import 'package:crltsmrtnz/pages/porfolio/game/2048/pages/game_page.dart';
+import 'package:crltsmrtnz/pages/porfolio/game/2048/game_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:crltsmrtnz/pages/nav_bar.dart';
@@ -10,13 +11,13 @@ class Game extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         drawer: const NavBar(),
         appBar: AppBar(
-          title: const Text("2048"),
+          title: const Text("2048 game"),
         ),
-        body: const SafeArea(
+        body: SafeArea(
           child: Center(
-              // Este Widget de texto usará la fuente RobotoMono
-              // child: GamePage(),
-              ),
+            // Este Widget de texto usará la fuente RobotoMono
+            child: Flutter2048(),
+          ),
         ),
       );
 }
