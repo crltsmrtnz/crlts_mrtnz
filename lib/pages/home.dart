@@ -1,3 +1,4 @@
+import 'package:crltsmrtnz/pages/porfolio/game/tetris/tetrismain.dart';
 import 'package:flutter/material.dart';
 
 import 'package:crltsmrtnz/pages/nav_bar.dart';
@@ -16,9 +17,11 @@ class Home extends StatelessWidget {
             // Este Widget de texto usará la fuente RobotoMono
             child:
                 // Flutter2048(),
-                Text(
-              'OK',
-            ),
+
+                AppTetris(),
+
+            // Text(
+            //   'OK',
           ),
         ),
       );
